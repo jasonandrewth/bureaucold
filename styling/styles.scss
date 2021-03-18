@@ -1,0 +1,224 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+}
+
+main {
+  padding: 13px;
+  position: relative;
+}
+
+canvas {
+  display:inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.intro {
+  height: 100vh;
+  width: 100vw;
+  color: #fff;
+  padding-bottom: 0.2vw;
+
+  h1 {
+	font-family: 'CentSchbookMonoBTWXX-Rg', serif;
+    font-size: 5vw;
+    line-height: 4.85vw;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02vw;
+    margin: 0;
+  }
+
+  p {
+	font-family: 'ArialMonospaced-Bold', sans-serif;
+    font-size: 4.8vw;
+    line-height: 4.6vw;
+    text-transform: uppercase;
+    letter-spacing: 0.15vw;
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+  }
+
+  .button {
+    border-radius: 10px;
+    margin-top: 8px;
+    padding: 7px 15px 5px;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.3);
+    text-align: center;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    margin-bottom: 10px;
+    transform: translate3d(0, 0, 0);
+    transition:all 0.3s;
+
+    &:hover {
+      transform: matrix3d(0.95, 0, 0, 0, 0, 0.95, 0, 0, 0, 0, 0.95, 0, 0, 0, 0, 1)
+    }
+
+    span {
+      font-family: 'ArialMonospaced-Bold', sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.contact {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: fit-content;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: calc(100vh - 13rem);
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+	cursor: pointer;
+}
+
+.title {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 16px;
+}
+
+.project {
+	position: relative;
+	width: 100vw;
+	padding-bottom: 20vw;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+    -moz-transform-origin: 0% 50%;
+    -ms-transform-origin: 0% 50%;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+  opacity: 1;
+  color: #fff;
+  transition: all 0.5s;
+  margin: 0;
+	
+  h1 {
+	font-family: 'ArialMonospaced-Bold', sans-serif;
+    font-size: 4.8vw;
+    line-height: 4.6vw;
+    text-transform: uppercase;
+    letter-spacing: 0.15vw;
+    cursor: pointer;
+  }
+
+  .ptop {
+	position: relative;
+	-webkit-transition: transform 1s cubic-bezier(0.19,1,0.22,1);
+    transition: transform 1s cubic-bezier(0.19,1,0.22,1);
+  }
+}
+
+
+.project.active {
+  color: red;
+}
+
+.project .circle {
+	position: absolute;
+    display: inline-block;
+    width: 2.7vw;
+    height: 2.7vw;
+    border-radius: 50%;
+    background: #ff0000;
+    display: block;
+    top: 1vw;
+    left: 0;
+    -moz-transform: scale3d(0,0,0);
+    -ms-transform: scale3d(0,0,0);
+    -webkit-transform: scale3d(0,0,0);
+    transform: scale3d(0,0,0);
+    -webkit-transition: transform 0.25s cubic-bezier(0.19,1,0.22,1);
+    transition: transform 0.25s cubic-bezier(0.19,1,0.22,1);
+}
+
+.project.active .ptop {
+    transform: translate3d(3.3vw,0px,0px);
+}
+
+.project.active .circle {
+	-moz-transform: scale3d(1,1,1);
+    -ms-transform: scale3d(1,1,1);
+    -webkit-transform: scale3d(1,1,1);
+    transform: scale3d(1,1,1);
+    -webkit-transition: transform 1s cubic-bezier(0.19,1,0.22,1);
+    transition: transform 1s cubic-bezier(0.19,1,0.22,1);
+}
+
+@media screen and (min-width: 53em) {
+	
+	.content {
+		height: 100vh;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 30em) {
+.project h1 {
+    font-size: 6.3vw;
+    line-height: 5.9vw;
+}
+
+.project.active .ptop {
+  transform: translate3d(5vw,0px,0px);
+}
+
+.title {
+  padding: 0;
+}
+
+.intro 
+ p {
+  font-size: 6.1vw;
+  line-height: 5.8vw;
+}
+  h1 {
+    font-size: 6.3vw;
+    line-height: 5.9vw;
+  }
+
+}
+
+#slider {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.dg {
+	z-index: 100 !important;
+}
