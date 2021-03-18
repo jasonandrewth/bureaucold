@@ -21,6 +21,7 @@
     "three": "^0.126.1"
   },
   "dependencies": {
+    "cssnano": "^4.1.10",
     "dat-gui": "^0.5.0",
     "dat.gui": "^0.7.7",
     "glslify-bundle": "^5.1.1",
